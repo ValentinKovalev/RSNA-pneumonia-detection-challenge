@@ -1,0 +1,16 @@
+1. Два jupyter notebook'a выполняют указанные задачи, а именно:
+    1.1 В "rsna-pneumonia-detection-augmentations-rcnn.ipynb"
+        даталодере теперь можно использовать аугментации как
+        обучении, так и на тесте;
+        Выходным файлом submition является submission_aug_fast_rcnn.csv
+    1.2 В "rsna-pneumonia-detection-no-augmentations-maskrcnn.ipynb"
+        реализовано использование maskrcnn, но без аугментаций;
+        Выходным файлом submition является submission_mask_rcnn.csv
+2. Файлы calculate_map.py и ensemble.py выполняют простое смешивание
+    результатов.
+    В описании в ensemble.py написано, как и с какими аргументами
+    запускать, но в данном случае нужно выполнить следующее:
+    "python ensemble.py submission_blended_predictions.csv \
+    submission_aug_faster_rcnn.csv \
+    submission_mask_rcnn.csv \
+    --iou-thresh 0.01 --conf-thresh 0.4 --weights 0.5 0.5"
